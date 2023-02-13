@@ -8,8 +8,7 @@ Solution to fix this error
 > git config core.autoCRLF
 > true
 
-> git config core.autoCRLF
-> false
+> git config core.autoCRLF false
 
 > git config core.autoCRLF
 > false

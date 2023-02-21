@@ -116,8 +116,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:contentDescription="@string/fab_desc"
+        android:contentDescription="@string/fab"
         android:backgroundTint="#A142F4"
-        android:src="@drawable/ic_add">
-    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+        android:src="@drawable/ic_add"/>
 </RelativeLayout>

@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Budget Tracker</string>
+    <string name="total_balance">total balance</string>
+    <string name="total_balance_in_digits">₹15000</string>
+    <string name="budget_in_digits">₹200</string>
+    <string name="budget_text">Budget</string>
+    <string name="expense_in_digits">₹100</string>
+    <string name="expense_text">Expense</string>
+    <string name="transactions_headline">Transactions</string>
+    <string name="fab_desc">FAB</string>
 </resources>

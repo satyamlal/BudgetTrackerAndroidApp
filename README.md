@@ -24,5 +24,5 @@
 ```bash
 > git pull --rebase origin main(or use master if your origin branch is master)
 
-> git push origin master(or use master if your origin branch is master)
+> git push origin main(or use master if your origin branch is master)
 ```

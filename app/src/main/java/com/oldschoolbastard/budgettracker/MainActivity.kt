@@ -3,15 +3,16 @@ package com.oldschoolbastard.budgettracker
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.activity.main.*
+import com.oldschoolbastard.budgettracker.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var transactions : ArrayList<Transaction>
     private lateinit var transactionAdapter: TransactionAdapter
-    private lateinit var layoutManager: LinearLayoutManager
+    private lateinit var linearLayoutManager: LinearLayoutManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
 
         transactions = arrayListOf(
             Transaction("Weekend budget", 1100.00),
@@ -22,8 +23,11 @@ class MainActivity : AppCompatActivity() {
         )
 
         transactionAdapter = TransactionAdapter(transactions)
-        layoutManager = LinearLayoutManager(this)
+        linearLayoutManager = LinearLayoutManager(this)
 
-
+        recyclerview.apply{
+            adapter = transactionAdapter
+            layoutManager = linearLayoutManager
+        }
     }
 }

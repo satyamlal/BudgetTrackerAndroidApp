@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var transactions : ArrayList<Transaction>
+    private lateinit var transactions: ArrayList<Transaction>
     private lateinit var transactionAdapter: TransactionAdapter
     private lateinit var linearLayoutManager: LinearLayoutManager
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         transactionAdapter = TransactionAdapter(transactions)
         linearLayoutManager = LinearLayoutManager(this)
 
-        recyclerview.apply{
+        recyclerview.apply {
             adapter = transactionAdapter
             layoutManager = linearLayoutManager
         }

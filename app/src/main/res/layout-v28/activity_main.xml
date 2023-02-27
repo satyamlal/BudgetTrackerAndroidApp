@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:id="@+id/main_total_balance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:orientation="vertical">
 
         <TextView
@@ -46,7 +46,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:baselineAligned="false"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -60,9 +59,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/budget_in_digits"
-                    android:textColor="@color/green"
                     android:textSize="25sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textColor="@color/green"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -81,9 +80,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/expense_in_digits"
-                    android:textColor="@color/red"
                     android:textSize="25sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textColor="@color/red"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -107,22 +106,20 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="333dp"
+        android:layout_height="301dp"
         android:layout_below="@+id/recycler_view_title"
-        android:layout_marginTop="5dp" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="105dp"
-        android:layout_height="112dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="30dp"
         android:contentDescription="@string/fab"
-        android:outlineSpotShadowColor="@color/white"
         android:src="@drawable/ic_add"
         app:backgroundTint="@color/green"
         app:borderWidth="0dp"
-        app:fabSize="auto" />
+        android:outlineSpotShadowColor="@color/white"/>
 </RelativeLayout>

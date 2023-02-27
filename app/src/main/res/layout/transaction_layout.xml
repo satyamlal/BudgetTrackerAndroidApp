@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="50dp"
-    android:layout_marginStart="16dp"
     android:background="?selectableItemBackground"
     android:clickable="true"
     android:focusable="true"
@@ -13,16 +12,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:layout_marginEnd="10dp"
         android:text="@string/banana_sample_text"
-        android:textSize="20sp"
-        android:layout_marginEnd="10dp"/>
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/amount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
         android:layout_weight="1"
+        android:layout_marginEnd="16dp"
         android:text="@string/_200_kg"
         android:textSize="20sp" />
 

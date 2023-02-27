@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:clickable="true"
+    android:layout_marginStart="16dp"
+    android:gravity="center"
+    android:background="?selectableItemBackground"
+    android:focusable="true">
+    
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/banana_sample_text"
+        android:textSize="20sp"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/_200_kg"
+        android:textSize="20sp"
+        android:layout_weight="1"
+        android:layout_marginEnd="16dp"/>
+
+</LinearLayout>

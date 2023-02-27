@@ -8,4 +8,6 @@
     <string name="expense_text">Expense</string>
     <string name="transactions_headline">Transactions</string>
     <string name="fab">FAB</string>
+    <string name="_200_kg">₹200/kg</string>
+    <string name="banana_sample_text">banana</string>
 </resources>

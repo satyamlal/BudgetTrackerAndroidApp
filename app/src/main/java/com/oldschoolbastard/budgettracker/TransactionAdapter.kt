@@ -32,7 +32,9 @@ class TransactionAdapter(private val transactions: ArrayList<Transaction>) :
             holder.amount.text = "- ₹%.2f".format(abs(transaction.amount))
             holder.amount.setTextColor(ContextCompat.getColor(context, R.color.red))
         }
+    }
 
-        holder.label.text = transaction.label
+    override fun getItemCount(): Int {
+        return transactions.size
     }
 }

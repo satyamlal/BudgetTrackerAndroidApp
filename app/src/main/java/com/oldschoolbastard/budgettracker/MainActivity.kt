@@ -3,7 +3,7 @@ package com.oldschoolbastard.budgettracker
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.oldschoolbastard.budgettracker.databinding.ActivityMainBinding
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var transactions : ArrayList<Transaction>

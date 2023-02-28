@@ -87,7 +87,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/updateBtn"
+            android:id="@+id/update_transaction_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
@@ -95,7 +95,7 @@
             android:backgroundTint="@color/green"
             android:padding="12dp"
             android:visibility="visible"
-            android:text="@string/add_transaction"
+            android:text="@string/update_transaction"
             android:textColor="@android:color/white"/>
     </LinearLayout>
 <!--    <Button-->

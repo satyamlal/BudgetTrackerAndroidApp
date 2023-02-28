@@ -17,4 +17,6 @@
     <string name="description_hint">Description</string>
     <string name="add_transaction">Add transaction</string>
     <string name="amount_hint">Amount</string>
+    <string name="bananas_hint">Bananas</string>
+    <string name="hint_12">₹12</string>
 </resources>

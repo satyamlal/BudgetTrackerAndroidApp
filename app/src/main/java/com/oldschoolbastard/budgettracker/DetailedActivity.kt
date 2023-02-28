@@ -7,12 +7,8 @@ import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import androidx.room.Room
-import kotlinx.android.synthetic.main.activity_add_transaction.amountInput
-import kotlinx.android.synthetic.main.activity_add_transaction.amountLayout
-import kotlinx.android.synthetic.main.activity_add_transaction.closeBtn
-import kotlinx.android.synthetic.main.activity_add_transaction.descriptionInput
-import kotlinx.android.synthetic.main.activity_add_transaction.labelInput
-import kotlinx.android.synthetic.main.activity_add_transaction.labelLayout
+import com.oldschoolbastard.budgettracker.databinding.ActivityAddTransactionBinding
+import kotlinx.android.synthetic.main.activity_add_transaction.*
 import kotlinx.android.synthetic.main.activity_detailed.*
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
@@ -20,58 +16,60 @@ import kotlinx.coroutines.launch
 
 class DetailedActivity : AppCompatActivity() {
     private lateinit var transaction : Transaction
+    private lateinit var binding: ActivityAddTransactionBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detailed)
+        binding = ActivityAddTransactionBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         transaction = intent.getSerializableExtra("transaction") as Transaction
 
-        labelInput.setText(transaction.label)
-        amountInput.setText(transaction.amount.toString())
-        descriptionInput.setText(transaction.description)
+        binding.labelInput.setText(transaction.label)
+        binding.amountInput.setText(transaction.amount.toString())
+        binding.descriptionInput.setText(transaction.description)
 
 
-        rootView.setOnClickListener {
+        binding.rootView.setOnClickListener {
             this.window.decorView.clearFocus()
 
             val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(it.windowToken, 0)
         }
 
-        labelInput.addTextChangedListener {
-            updateBtn.visibility = View.VISIBLE
+        binding.labelInput.addTextChangedListener {
+            binding.updateBtn.visibility = View.VISIBLE
             if(it!!.isNotEmpty())
-                labelLayout.error = null
+                binding.labelLayout.error = null
         }
 
-        amountInput.addTextChangedListener {
-            updateBtn.visibility = View.VISIBLE
+        binding.amountInput.addTextChangedListener {
+            binding.updateBtn.visibility = View.VISIBLE
             if(it!!.isNotEmpty())
-                amountLayout.error = null
+                binding.amountLayout.error = null
         }
 
-        descriptionInput.addTextChangedListener {
-            updateBtn.visibility = View.VISIBLE
+        binding.descriptionInput.addTextChangedListener {
+            binding.updateBtn.visibility = View.VISIBLE
         }
 
-        updateBtn.setOnClickListener {
-            val label = labelInput.text.toString()
-            val description = descriptionInput.text.toString()
-            val amount = amountInput.text.toString().toDoubleOrNull()
+        binding.updateBtn.setOnClickListener {
+            val label = binding.labelInput.text.toString()
+            val description = binding.descriptionInput.text.toString()
+            val amount = binding.amountInput.text.toString().toDoubleOrNull()
 
             if(label.isEmpty())
-                labelLayout.error = "Please enter a valid label"
+                binding.labelLayout.error = "Please enter a valid label"
 
             else if(amount == null)
-                amountLayout.error = "Please enter a valid amount"
+                binding.amountLayout.error = "Please enter a valid amount"
             else {
                 val transaction  = Transaction(transaction.id, label, amount, description)
                 update(transaction)
             }
         }
 
-        closeBtn.setOnClickListener {
+        binding.closeBtn.setOnClickListener {
             finish()
         }
     }

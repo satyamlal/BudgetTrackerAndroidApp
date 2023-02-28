@@ -10,4 +10,7 @@
     <string name="expense_text_view">Expense</string>
     <string name="transactions_title">Transactions</string>
     <string name="fab_description">FAB</string>
+    <string name="description">Description</string>
+    <string name="update_transaction">Update transaction</string>
+    <string name="label_hint">Label</string>
 </resources>

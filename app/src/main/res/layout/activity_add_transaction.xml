@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:layout_marginEnd="12dp"
-            android:hint="Label"
+            android:hint="@string/label_hint"
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText

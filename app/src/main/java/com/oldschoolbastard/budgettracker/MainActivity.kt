@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
 import com.google.android.material.snackbar.Snackbar
+import com.oldschoolbastard.budgettracker.databinding.ActivityAddTransactionBinding
 //import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
@@ -24,10 +25,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var transactionAdapter: TransactionAdapter
     private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var db : AppDatabase
+    private lateinit var binding: ActivityAddTransactionBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityAddTransactionBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         transactions = arrayListOf()
 
@@ -38,7 +42,7 @@ class MainActivity : AppCompatActivity() {
             AppDatabase::class.java,
             "transactions").build()
 
-        recyclerview.apply {
+        recyclerview?.apply {
             adapter = transactionAdapter
             layoutManager = linearLayoutManager
         }
@@ -63,7 +67,7 @@ class MainActivity : AppCompatActivity() {
         val swipeHelper = ItemTouchHelper(itemTouchHelper)
         swipeHelper.attachToRecyclerView(recyclerview)
 
-        addBtn.setOnClickListener {
+        binding.addTransactionBtn.setOnClickListener {
             val intent = Intent(this, AddTransactionActivity::class.java)
             startActivity(intent)
         }
@@ -86,7 +90,7 @@ class MainActivity : AppCompatActivity() {
         val expenseAmount = totalAmount - budgetAmount
 
         balance.text = "$ %.2f".format(totalAmount)
-        totalAmount
+        binding.
         budget.text = "$ %.2f".format(budgetAmount)
         expense.text = "$ %.2f".format(expenseAmount)
     }

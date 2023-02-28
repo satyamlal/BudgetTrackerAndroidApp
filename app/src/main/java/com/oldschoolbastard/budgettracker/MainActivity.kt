@@ -99,7 +99,6 @@ class MainActivity : AppCompatActivity() {
     private fun undoDelete(){
         GlobalScope.launch {
             db.transactionDao().insertAll(deletedTransaction)
-
             transactions = oldTransactions
 
             runOnUiThread {

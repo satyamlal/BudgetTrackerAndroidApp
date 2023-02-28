@@ -2,10 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/rootView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailedActivity">
+    tools:context=".DetailedActivity"
+    android:id="@+id/rootView">
 
     <ImageButton
         android:id="@+id/closeBtn"
@@ -15,7 +15,7 @@
         android:background="@drawable/close_bg"
         android:contentDescription="@string/cross_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -34,19 +34,17 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:layout_marginEnd="12dp"
-            android:hint="@string/label"
-            app:boxStrokeWidth="2dp"
+            android:hint="@string/label_hint"
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/labelInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_label"
+                android:drawableStart="@drawable/label_selector"
                 android:drawablePadding="12dp"
                 android:inputType="text"
-                android:maxLines="1"
-                android:textSize="34sp" />
+                android:maxLines="1"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -56,8 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:layout_marginEnd="12dp"
-            android:hint="@string/amount"
-            app:boxStrokeWidth="2dp"
+            android:hint="@string/amount_hint"
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -67,8 +64,7 @@
                 android:drawableStart="@drawable/money_selector"
                 android:drawablePadding="12dp"
                 android:inputType="numberDecimal|numberSigned"
-                android:maxLines="1"
-                android:textSize="34sp" />
+                android:maxLines="1"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -78,34 +74,42 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:layout_marginEnd="12dp"
-            android:hint="@string/description"
-            app:boxStrokeWidth="2dp"
+            android:hint="@string/description_hint"
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/descriptionInput"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawablePadding="12dp"
-                android:inputType="text|textMultiLine"
+                android:layout_height="100dp"
                 android:drawableStart="@drawable/description_selector"
-                android:textSize="34sp"/>
+                android:drawablePadding="12dp"
+                android:inputType="text|textMultiLine" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <Button
+            android:id="@+id/updateBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:backgroundTint="@color/green"
+            android:padding="12dp"
+            android:visibility="visible"
+            android:text="@string/add_transaction"
+            android:textColor="@android:color/white"/>
     </LinearLayout>
-
-    <Button
-        android:id="@+id/updateBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:backgroundTint="@color/green"
-        android:padding="10dp"
-        android:text="@string/update_transaction"
-        android:textColor="@android:color/white"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+<!--    <Button-->
+<!--        android:id="@+id/updateBtn"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:backgroundTint="@color/green"-->
+<!--        android:padding="10dp"-->
+<!--        android:text="@string/update_transaction"-->
+<!--        android:textColor="@android:color/white"-->
+<!--        android:visibility="visible"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>

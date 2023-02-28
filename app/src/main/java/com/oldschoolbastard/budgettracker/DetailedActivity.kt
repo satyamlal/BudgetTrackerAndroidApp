@@ -8,8 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import androidx.room.Room
 import com.oldschoolbastard.budgettracker.databinding.ActivityAddTransactionBinding
-import kotlinx.android.synthetic.main.activity_add_transaction.*
-import kotlinx.android.synthetic.main.activity_detailed.*
+//import kotlinx.android.synthetic.main.activity_add_transaction.*
+//import kotlinx.android.synthetic.main.activity_detailed.*
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -29,31 +29,37 @@ class DetailedActivity : AppCompatActivity() {
         binding.amountInput.setText(transaction.amount.toString())
         binding.descriptionInput.setText(transaction.description)
 
-
-        binding.rootView.setOnClickListener {
+        binding.root.setOnClickListener {
             this.window.decorView.clearFocus()
 
             val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(it.windowToken, 0)
         }
+//
+//        binding.rootView.setOnClickListener {
+//            this.window.decorView.clearFocus()
+//
+//            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+//            imm.hideSoftInputFromWindow(it.windowToken, 0)
+//        }
 
         binding.labelInput.addTextChangedListener {
-            binding.updateBtn.visibility = View.VISIBLE
+            binding.addTransactionBtn.visibility = View.VISIBLE
             if(it!!.isNotEmpty())
                 binding.labelLayout.error = null
         }
 
         binding.amountInput.addTextChangedListener {
-            binding.updateBtn.visibility = View.VISIBLE
+            binding.addTransactionBtn.visibility = View.VISIBLE
             if(it!!.isNotEmpty())
                 binding.amountLayout.error = null
         }
 
         binding.descriptionInput.addTextChangedListener {
-            binding.updateBtn.visibility = View.VISIBLE
+            binding.addTransactionBtn.visibility = View.VISIBLE
         }
 
-        binding.updateBtn.setOnClickListener {
+        binding.addTransactionBtn.setOnClickListener {
             val label = binding.labelInput.text.toString()
             val description = binding.descriptionInput.text.toString()
             val amount = binding.amountInput.text.toString().toDoubleOrNull()

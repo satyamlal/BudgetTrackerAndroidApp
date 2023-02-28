@@ -23,12 +23,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/total_balance"
+                android:text="@string/total_balance_text_view"
                 android:textAllCaps="true"
                 android:textStyle="bold"
                 android:textSize="20sp"/>
             <TextView
-                android:id="@+id/balance"
+                android:id="@+id/total_balance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/total_balance_in_digits"
@@ -64,14 +64,14 @@
                         android:id="@+id/budget"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/budget_in_digits"
+                        android:text="@string/balance_left"
                         android:textStyle="bold"
                         android:textSize="32sp"
                         android:textColor="@color/green"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/budget_text"
+                        android:text="@string/budget_text_view"
                         android:textSize="17sp"
                         android:textAllCaps="true"/>
                 </LinearLayout>
@@ -85,14 +85,14 @@
                         android:id="@+id/expense"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/expense_in_digits"
+                        android:text="@string/budget_used"
                         android:textStyle="bold"
                         android:textSize="32sp"
                         android:textColor="@color/red"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/expense_text"
+                        android:text="@string/expense_text_view"
                         android:textSize="17sp"
                         android:textAllCaps="true"/>
                 </LinearLayout>
@@ -103,7 +103,7 @@
             android:id="@+id/recyclerview_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/transactions"
+            android:text="@string/transactions_title"
             android:textStyle="bold"
             android:textSize="17sp"
             android:textAllCaps="true"
@@ -116,25 +116,19 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/recyclerview_title"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp" />
+            android:layout_margin="10dp"/>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/addBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:backgroundTint="@color/red"
-            android:contentDescription="@string/fab_content_description"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="10dp"
             android:src="@drawable/ic_add"
+            android:backgroundTint="@color/red"
+            app:tint="@color/white"
             app:borderWidth="0dp"
-            app:tint="@color/white" />
+            android:contentDescription="@string/fab_description" />
     </RelativeLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

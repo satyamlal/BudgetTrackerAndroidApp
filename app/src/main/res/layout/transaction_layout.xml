@@ -13,9 +13,9 @@
 
     <TextView
         android:id="@+id/label"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/bananas"
+        android:text="Bananas"
         android:textSize="20sp"
         android:layout_marginStart="6dp"
         android:layout_weight="1"/>
@@ -25,5 +25,5 @@
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:layout_marginEnd="12dp"
-        android:text="@string/_12"/>
+        android:text="$12"/>
 </LinearLayout>

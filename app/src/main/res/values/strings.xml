@@ -1,13 +1,13 @@
 <resources>
     <string name="app_name">Budget Tracker</string>
-    <string name="total_balance">total balance</string>
-    <string name="total_balance_in_digits">₹15000</string>
-    <string name="budget_in_digits">₹200</string>
-    <string name="budget_text">Budget</string>
-    <string name="expense_in_digits">₹100</string>
-    <string name="expense_text">Expense</string>
-    <string name="transactions_headline">Transactions</string>
-    <string name="fab">FAB</string>
-    <string name="_200_kg">₹200/kg</string>
-    <string name="banana_sample_text">banana</string>
+    <string name="label">Label</string>
+    <string name="amount">Amount</string>
+    <string name="total_balance_in_digits">₹300</string>
+    <string name="total_balance_text_view">Total Balance</string>
+    <string name="balance_left">₹400</string>
+    <string name="budget_text_view">Budget</string>
+    <string name="budget_used">₹400</string>
+    <string name="expense_text_view">Expense</string>
+    <string name="transactions_title">Transactions</string>
+    <string name="fab_description">FAB</string>
 </resources>

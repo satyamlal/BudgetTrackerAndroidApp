@@ -2,9 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/rootView"
     tools:context=".DetailedActivity">
 
     <ImageButton
@@ -13,6 +13,7 @@
         android:layout_height="34dp"
         android:layout_margin="12dp"
         android:background="@drawable/close_bg"
+        android:contentDescription="@string/cross_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,18 +35,18 @@
             android:layout_marginStart="12dp"
             android:layout_marginEnd="12dp"
             android:hint="@string/label"
-            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidth="2dp"
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/labelInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_label"
                 android:drawablePadding="12dp"
                 android:inputType="text"
                 android:maxLines="1"
-                android:textSize="34sp"
-                android:drawableStart="@drawable/ic_label"/>
+                android:textSize="34sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -56,7 +57,7 @@
             android:layout_marginStart="12dp"
             android:layout_marginEnd="12dp"
             android:hint="@string/amount"
-            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidth="2dp"
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -78,7 +79,7 @@
             android:layout_marginStart="12dp"
             android:layout_marginEnd="12dp"
             android:hint="@string/description"
-            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidth="2dp"
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -87,21 +88,22 @@
                 android:layout_height="wrap_content"
                 android:drawablePadding="12dp"
                 android:inputType="text|textMultiLine"
-                android:textSize="34sp" />
+                android:drawableStart="@drawable/description_selector"
+                android:textSize="34sp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
 
     <Button
         android:id="@+id/updateBtn"
-        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/green"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/green"
         android:padding="10dp"
         android:text="@string/update_transaction"
-        android:layout_margin="10dp"
         android:textColor="@android:color/white"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

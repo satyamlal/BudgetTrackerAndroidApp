@@ -3,13 +3,13 @@ package com.oldschoolbastard.budgettracker
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.*
 import androidx.room.Room
 import com.google.android.material.snackbar.Snackbar
 import com.oldschoolbastard.budgettracker.databinding.*
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.*
 
 class MainActivity : AppCompatActivity() {
@@ -85,10 +85,11 @@ class MainActivity : AppCompatActivity() {
         val budgetAmount = transactions.filter { it.amount > 0 }.sumOf { it.amount }
         val expenseAmount = totalAmount - budgetAmount
 
+
         balance.text = "$ %.2f".format(totalAmount)
         budget.text = "$ %.2f".format(budgetAmount)
         expense.text = "$ %.2f".format(expenseAmount)
-        total_balance.text = "$ %.2f".format(totalAmount)
+
     }
 
     @OptIn(DelicateCoroutinesApi::class)

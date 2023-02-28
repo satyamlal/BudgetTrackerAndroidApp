@@ -8,6 +8,7 @@ plugins {
 android {
     namespace 'com.oldschoolbastard.budgettracker'
     compileSdk 33
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.oldschoolbastard.budgettracker"

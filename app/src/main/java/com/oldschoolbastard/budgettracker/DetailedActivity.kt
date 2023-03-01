@@ -4,15 +4,19 @@ import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import androidx.room.Room
 import androidx.viewbinding.ViewBinding
-import com.oldschoolbastard.budgettracker.databinding.ActivityAddTransactionBinding
+import com.oldschoolbastard.budgettracker.databinding.*
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
+private val ViewBinding.updateBtn: Button
+    get() = root.findViewById(R.id.updateBtn) ?:
+    throw IllegalStateException("update_btn not found in the binding layout")
 
 class DetailedActivity : AppCompatActivity() {
     private lateinit var transaction: Transaction
@@ -23,7 +27,7 @@ class DetailedActivity : AppCompatActivity() {
         binding = ActivityAddTransactionBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        transaction = intent.getSerializableExtra("transaction") as Transaction
+        transaction = intent?.getSerializableExtra("transaction") as Transaction
 
         binding.labelInput.setText(transaction.label)
         binding.amountInput.setText(transaction.amount.toString())
@@ -36,12 +40,6 @@ class DetailedActivity : AppCompatActivity() {
             imm.hideSoftInputFromWindow(it.windowToken, 0)
         }
 
-        binding.root.setOnClickListener {
-            this.window.decorView.clearFocus()
-
-            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            imm.hideSoftInputFromWindow(it.windowToken, 0)
-        }
 
         binding.labelInput.addTextChangedListener {
             binding.updateBtn.visibility = View.VISIBLE

@@ -85,7 +85,6 @@ class MainActivity : AppCompatActivity() {
         val budgetAmount = transactions.filter { it.amount > 0 }.sumOf { it.amount }
         val expenseAmount = totalAmount - budgetAmount
 
-
         balance.text = "$ %.2f".format(totalAmount)
         budget.text = "$ %.2f".format(budgetAmount)
         expense.text = "$ %.2f".format(expenseAmount)

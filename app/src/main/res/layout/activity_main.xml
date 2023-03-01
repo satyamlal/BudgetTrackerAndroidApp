@@ -6,12 +6,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    tools:context=".MainActivity">
     <RelativeLayout
 
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:id="@+id/balance_layout"
@@ -23,7 +22,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Total Balance"
+                android:text="@string/total_balance_text_view"
                 android:textAllCaps="true"
                 android:textStyle="bold"
                 android:textSize="20sp"/>
@@ -31,7 +30,7 @@
                 android:id="@+id/balance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="$300"
+                android:text="@string/balance"
                 android:textSize="32sp"
                 android:textStyle="bold"/>
         </LinearLayout>
@@ -52,7 +51,8 @@
                 android:paddingTop="12dp"
                 android:paddingBottom="12dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                android:baselineAligned="false">
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -63,14 +63,14 @@
                         android:id="@+id/budget"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$400"
+                        android:text="@string/budget"
                         android:textStyle="bold"
                         android:textSize="32sp"
                         android:textColor="@color/green"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Budget"
+                        android:text="@string/budget_text_view"
                         android:textSize="17sp"
                         android:textAllCaps="true"/>
                 </LinearLayout>
@@ -84,14 +84,14 @@
                         android:id="@+id/expense"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$400"
+                        android:text="@string/expense"
                         android:textStyle="bold"
                         android:textSize="32sp"
                         android:textColor="@color/red"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Expense"
+                        android:text="@string/expense_text_view"
                         android:textSize="17sp"
                         android:textAllCaps="true"/>
                 </LinearLayout>
@@ -102,7 +102,7 @@
             android:id="@+id/recyclerview_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Transactions"
+            android:text="@string/transactions_title_text_view"
             android:textStyle="bold"
             android:textSize="17sp"
             android:textAllCaps="true"
@@ -122,11 +122,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_margin="10dp"
             android:src="@drawable/ic_add"
             android:backgroundTint="@color/red"
             app:tint="@color/white"
-            app:borderWidth="0dp"/>
+            app:borderWidth="0dp"
+            android:contentDescription="@string/fab_description" />
     </RelativeLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

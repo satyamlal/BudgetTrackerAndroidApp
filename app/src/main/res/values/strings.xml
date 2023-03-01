@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Budget Tracker</string>
+    <string name="balance">₹15000</string>
+    <string name="budget">₹500</string>
+    <string name="budget_text_view">Budget</string>
+    <string name="total_balance_text_view">Total Balance</string>
+    <string name="expense">₹600</string>
+    <string name="expense_text_view">Expense</string>
+    <string name="transactions_title_text_view">Transactions</string>
+    <string name="fab_description">FAB</string>
+    <string name="update_transaction_button_text">Update transaction</string>
+    <string name="label_title">Label</string>
+    <string name="amount_title">Amount</string>
+    <string name="description_title">Description</string>
+    <string name="cross_button">cross button description</string>
+    <string name="add_transaction_btn_text">Add transaction</string>
 </resources>

@@ -7,10 +7,12 @@ import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import androidx.room.Room
+import androidx.viewbinding.ViewBinding
 import com.oldschoolbastard.budgettracker.databinding.ActivityAddTransactionBinding
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+
 
 class DetailedActivity : AppCompatActivity() {
     private lateinit var transaction: Transaction
@@ -42,22 +44,22 @@ class DetailedActivity : AppCompatActivity() {
         }
 
         binding.labelInput.addTextChangedListener {
-            binding.addTransactionBtn.visibility = View.VISIBLE
+            binding.updateBtn.visibility = View.VISIBLE
             if (it!!.isNotEmpty())
                 binding.labelLayout.error = null
         }
 
         binding.amountInput.addTextChangedListener {
-            binding.addTransactionBtn.visibility = View.VISIBLE
+            binding.updateBtn.visibility = View.VISIBLE
             if (it!!.isNotEmpty())
                 binding.amountLayout.error = null
         }
 
         binding.descriptionInput.addTextChangedListener {
-            binding.addTransactionBtn.visibility = View.VISIBLE
+            binding.updateBtn.visibility = View.VISIBLE
         }
 
-        binding.addTransactionBtn.setOnClickListener {
+        binding.updateBtn.setOnClickListener {
             val label = binding.labelInput.text.toString()
             val description = binding.descriptionInput.text.toString()
             val amount = binding.amountInput.text.toString().toDoubleOrNull()
